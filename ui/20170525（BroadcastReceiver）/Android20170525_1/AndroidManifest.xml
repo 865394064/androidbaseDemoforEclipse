@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android20170525_1"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="10" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.example.android20170525_1.MyBoradcastReceiver1" >
+            <intent-filter>
+                <action android:name="GUANGBO2017052501" />
+                <action android:name="GUANGBO2017052502" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.example.android20170525_1.MyBoradcastReceiver2" >
+            <intent-filter>
+                <action android:name="GUANGBO2017052501" />
+                <action android:name="GUANGBO2017052503" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

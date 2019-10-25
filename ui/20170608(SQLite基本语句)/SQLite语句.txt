@@ -1,0 +1,76 @@
+创建表：id主键，sex默认值为‘男’
+create table if not exists user(
+id integer primary key,
+name text not null,
+sex text default '男');
+
+删除表
+drop table if exists user;
+
+表添加字段
+alter table user add column xuehao text;
+修改表名
+alter table user rename to user2;
+
+
+插入数据
+insert into user (name,sex) values ('zhang','男');
+
+CREATE TABLE "a"
+(i integer,
+name text,
+da text, te date);
+insert into a (i,name,da,te)select * from attence;
+insert into a (da) select (ename) from attence;
+删除数据当da='你'
+delete from a where da='你';
+
+delete from attence where ename='你';
+修改:当表a中name='ta',修改name='shuo'
+update a set name='shuo' where name='ta';
+
+create table stu
+(id integer primary key,
+name text,birthday text,sex text);
+insert into stu (id,name,birthday,sex) values (1,'王一','0201','男');
+insert into stu (id,name,birthday,sex) values (2,'王二','0202','男'); 
+insert into stu (id,name,birthday,sex) values (3,'王三','0203','女'); 
+insert into stu (id,name,birthday,sex) values (4,'王四','0204','男'); 
+insert into stu (id,name,birthday,sex) values (5,'王五','0205','女'); 
+insert into stu (id,name,birthday,sex) values (6,'王六','0206','男'); 
+insert into stu (id,name,birthday,sex) values (7,'王七','0207','女'); 
+insert into stu (id,name,birthday,sex) values (8,'王八','0208','男'); 
+insert into stu (id,name,birthday,sex) values (9,'王九','0209','女'); 
+insert into stu (id,name,birthday,sex) values (10,'王十','0210','男');  
+insert into stu (id,name,birthday,sex) values (11,'王十八','0210','男'); 
+insert into stu (id,name,birthday,sex) values (12,'王八是','0210','男'); 
+
+create table student as select * from stu;
+create table stu2 as select *from stu where sex='女';
+select id wid,name wname,birthday wbirthday,sex wsex from stu2;
+
+select id from stu2 limit 1;//查询一行记录
+select id from stu2 limit 2,1;//跳过前面两个查询一行记录
+select id,name from stu2 limit 1 offset 2;//跳过两个查询一行数据
+
+select id from stu2 order by id limit 1;//按照id的升序查询第一行记录
+select id from stu2 order by id desc limit 1;//按照id的降序查询第一行记录（也就是查询最后一条数据）
+
+
+select * from stu2 group by name;//查找所有数据并分组，如果name有重复的就只显示最后一项；
+select * from stu2 group by name having count(1)>1;//查找所有数据，不重复的数据不显示，重复的数据只显示最后一项；
+
+比较运算符
+select * from stu where id !=5;//查找id不等于5的数据
+select * from stu where id >=5;//查找id>=5的数据
+select * from stu where id between 3 and 6;//查找id在3到6之间的所有数据
+select * from stu where id not between 3 and 6;;//查找id值不在3到6之间的所有数据
+
+like:查找类似的
+%(百分号)：用来表示零个或多个的任意字符。
+_(下划线)： 用来表示一个任意的字符。
+select * from stu where birthday like '%0%';//查找birthday 的值中含有0的所有数据
+
+select * from stu where name like '%八';//查找name值中最右一个字为八的所有数据
+select * from stu where name like '_八';//查找name中长度为2,且右边为八的值
+select * from stu where name like '%八%';//查找name值中含有八的所有数据

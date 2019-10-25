@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/blue2" >
+
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="click"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/et_chazhao"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="请输入查找内容" />
+
+        <Button
+            android:id="@+id/btn_chazhao"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="5"
+            android:clickable="true"
+            android:onClick="click"
+            android:text="查找" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

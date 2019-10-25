@@ -1,0 +1,48 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android20170506_2.MainActivity" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/item1"
+        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="51"
+        android:title="一级菜单一"/>
+    <item
+        android:id="@+id/item2"
+        android:orderInCategory="52"
+        android:title="一级菜单二"/>
+    <item
+        android:id="@+id/item3"
+        android:orderInCategory="53"
+        android:title="一级菜单三"/>
+    <item
+        android:id="@+id/item4"
+        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="54"
+        android:title="一级菜单四"/>
+    <item
+        android:id="@+id/item5"
+        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="55"
+        android:title="一级菜单五"/>
+    <item
+        android:id="@+id/item6"
+        android:orderInCategory="49"
+        android:title="一级菜单展开">
+        <menu>
+            <item
+                android:id="@+id/item21"
+                android:orderInCategory="10"
+                android:title="二级菜单一"/>
+            <item
+                android:id="@+id/item22"
+                android:orderInCategory="11"
+                android:title="二级菜单二"/>
+        </menu>
+    </item>
+
+</menu>
